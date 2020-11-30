@@ -1,7 +1,5 @@
 <template>
   <div id="app" style="padding: 15px">
-    {{ value }}
-    {{ label }}
     <div>
       <vue-menu :menu="menu" v-model="value" :label.sync="label"></vue-menu>
     </div>
