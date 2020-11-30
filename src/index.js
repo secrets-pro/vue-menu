@@ -1,4 +1,5 @@
 import VueMenu from "./components/VueMenu";
+import "./style/index.less";
 const components = {
   VueMenu
 };

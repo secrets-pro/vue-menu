@@ -1,6 +1,6 @@
 {
   "name": "@secrets/vue-menu",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "vue-menu",
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js",
@@ -8,9 +8,9 @@
     "lint": "vue-cli-service lint",
     "release": "npm publish --access public --registry  https://registry.npmjs.org/"
   },
-  "main": "src/index.js",
-  "module": "src/index.js",
-  "unpkg": "src/index.js",
+  "main": "dist/vue-menu.common.js",
+  "module": "dist/vue-menu.common.js",
+  "unpkg": "dist/vue-menu.common.js",
   "dependencies": {
     "vue": "^2.6.12"
   },
