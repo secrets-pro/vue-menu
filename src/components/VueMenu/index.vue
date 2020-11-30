@@ -56,6 +56,7 @@ export default {
       this.currentLabel = l;
       this.$emit("input", v);
       this.$emit("update:label", l);
+      this.$emit("on-click", v, l);
     }
   }
 };
