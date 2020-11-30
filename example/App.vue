@@ -1,7 +1,12 @@
 <template>
   <div id="app" style="padding: 15px">
     <div>
-      <vue-menu :menu="menu" v-model="value" :label.sync="label"></vue-menu>
+      <vue-menu
+        :menu="menu"
+        v-model="value"
+        @on-click="choose"
+        :label.sync="label"
+      ></vue-menu>
     </div>
   </div>
 </template>
@@ -72,6 +77,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    choose(...items) {
+      console.log(items);
+    }
   }
 };
 </script>
