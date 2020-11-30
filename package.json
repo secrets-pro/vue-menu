@@ -1,6 +1,6 @@
 {
   "name": "@secrets/vue-menu",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "vue-menu",
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js",
@@ -12,7 +12,6 @@
   "module": "dist/index.js",
   "unpkg": "dist/index.js",
   "dependencies": {
-    "core-js": "^3.6.5",
     "vue": "^2.6.12"
   },
   "postcss": {
