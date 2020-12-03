@@ -1,6 +1,6 @@
 {
   "name": "@secrets/vue-menu",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "vue-menu",
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js",
