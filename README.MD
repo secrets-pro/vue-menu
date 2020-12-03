@@ -10,6 +10,8 @@ npm i @secrets/vue-menu -D
 
 ```js
 import VueMenu from "@secrets/vue-menu";
+import VueMenu from "@secrets/vue-menu/style/index.less";
+
 Vue.use(VueMenu);
 ```
 

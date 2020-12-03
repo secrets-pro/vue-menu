@@ -1,22 +1,16 @@
 <template>
   <div class="chid-nav-wrap">
     <ul :class="{ 'chid-nav': true }" v-if="items">
-      <li
-        :class="{
-          active: active && active.length ? active[0] === cm.name : false
-        }"
-        v-for="cm in items"
-        :key="cm.name"
-      >
+      <li :class="setActive(cm)" v-for="cm in items" :key="cm.name">
         <div @click="triggerClick(cm)">
           <a>{{ cm.title }}</a>
-          <vue-menu
+          <vue-menu-item
             :active="nextActive"
             :parent="cm"
             :items="cm.items"
             @on-click="childClick"
             v-if="cm.items"
-          ></vue-menu>
+          ></vue-menu-item>
         </div>
       </li>
     </ul>
@@ -24,10 +18,11 @@
 </template>
 <script>
 export default {
-  name: "vue-menu",
+  name: "vue-menu-item",
   props: {
     active: Array,
     items: Array,
+    activeClass: String,
     parent: Object,
     default() {
       return [];
@@ -40,6 +35,18 @@ export default {
     }
   },
   methods: {
+    setActive(cm) {
+      if (this.activeClass) {
+        return {
+          [this.activeClass]:
+            this.active && this.active.length
+              ? this.active[0] === cm.name
+              : false
+        };
+      } else {
+        return "";
+      }
+    },
     triggerClick(item) {
       if (!item.items) {
         const params = this.parent ? [this.parent] : [];

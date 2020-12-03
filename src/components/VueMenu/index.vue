@@ -1,8 +1,9 @@
 <template>
-  <div class="sm-menu">
+  <div :class="{ 'sm-menu': true, [this.placement]: !!this.placement }">
     <sm-menu
       :active="currentValue"
       :items="menu"
+      :activeClass="activeClass"
       @on-click="triggerClick"
     ></sm-menu>
   </div>
@@ -16,6 +17,10 @@ export default {
   },
   name: "vue-menu",
   props: {
+    placement: {
+      type: String,
+      default: "left"
+    },
     value: {
       type: Array,
       default() {
@@ -33,7 +38,8 @@ export default {
       default: function() {
         return [];
       }
-    }
+    },
+    activeClass: String
   },
   data() {
     return {
