@@ -1,12 +1,18 @@
 <template>
-  <div class="chid-nav-wrap">
+  <div :class="`chid-nav-wrap level-${level}`">
     <ul :class="{ 'chid-nav': true }" v-if="items">
-      <li :class="setActive(cm)" v-for="cm in items" :key="cm.name">
+      <li
+        :class="setActive(cm, index)"
+        v-for="(cm, index) in items"
+        :key="cm.name"
+      >
         <div @click="triggerClick(cm)">
           <a>{{ cm.title }}</a>
           <vue-menu-item
             :active="nextActive"
             :parent="cm"
+            :level="level + 1"
+            :hoveredIndex="hoveredIndex"
             :items="cm.items"
             @on-click="childClick"
             v-if="cm.items"
@@ -26,6 +32,16 @@ export default {
     parent: Object,
     default() {
       return [];
+    },
+    hoveredIndex: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    level: {
+      type: Number,
+      default: 0
     }
   },
   computed: {
@@ -35,16 +51,24 @@ export default {
     }
   },
   methods: {
-    setActive(cm) {
+    setActive(cm, index) {
+      let hoveredClass = this.hoveredIndex[this.level];
+      let hover = undefined;
+      if (this.hoveredIndex.length && index === hoveredClass) {
+        hover = "hover";
+      }
       if (this.activeClass) {
         return {
+          hover,
           [this.activeClass]:
             this.active && this.active.length
               ? this.active[0] === cm.name
               : false
         };
       } else {
-        return "";
+        return {
+          hover
+        };
       }
     },
     triggerClick(item) {

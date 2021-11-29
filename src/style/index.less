@@ -50,7 +50,8 @@
         background-color: #f5f6fc;
         color: @primary-color;
       }
-      &:hover {
+      &:hover,
+      &.hover {
         background-color: #f5f6fc;
         color: @primary-color;
         & > div > div.chid-nav-wrap {
@@ -82,10 +83,13 @@
           left: -10000px;
           transform: translate3d(-30px, 0px, 0);
         }
-        &:hover > div > div.chid-nav-wrap {
-          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-          left: @offset;
-          transform: translate3d(0px, 0px, 0);
+        &:hover,
+        &.hover {
+          & > div > div.chid-nav-wrap {
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+            left: @offset;
+            transform: translate3d(0px, 0px, 0);
+          }
         }
       }
     }
@@ -98,10 +102,13 @@
           right: -10000px;
           transform: translate3d(30px, 0px, 0);
         }
-        &:hover > div > div.chid-nav-wrap {
-          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-          right: @offset;
-          transform: translate3d(0px, 0px, 0);
+        &:hover,
+        &.hover {
+          & > div > div.chid-nav-wrap {
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+            right: @offset;
+            transform: translate3d(0px, 0px, 0);
+          }
         }
       }
     }

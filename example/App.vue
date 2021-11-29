@@ -6,7 +6,12 @@
         v-model="value"
         @on-click="choose"
         :label.sync="label"
+        ref="menu"
       ></vue-menu>
+      <div>
+        <button @click="click">手动设置</button>
+        <button @click="click1">手动设置1</button>
+      </div>
     </div>
   </div>
 </template>
@@ -79,6 +84,12 @@ export default {
     };
   },
   methods: {
+    click() {
+      this.$refs.menu.triggerHover([1, 0]);
+    },
+    click1() {
+      this.$refs.menu.triggerHover([2, 1]);
+    },
     choose(...items) {
       console.log(items);
     }

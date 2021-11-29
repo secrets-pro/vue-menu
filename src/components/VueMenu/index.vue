@@ -4,6 +4,7 @@
       :active="currentValue"
       :items="menu"
       :activeClass="activeClass"
+      :hoveredIndex="hovered"
       @on-click="triggerClick"
     ></sm-menu>
   </div>
@@ -43,6 +44,7 @@ export default {
   },
   data() {
     return {
+      hovered: [],
       currentValue: this.value,
       currentLabel: this.label,
       menus: this.menu
@@ -54,6 +56,12 @@ export default {
     }
   },
   methods: {
+    // 手动触发hover
+    triggerHover(itemsIndex = []) {
+      if (Array.isArray(itemsIndex) && itemsIndex.length > 0) {
+        this.hovered = itemsIndex;
+      }
+    },
     triggerClick(item) {
       // 构造
       let v = item.map(el => el.name);
