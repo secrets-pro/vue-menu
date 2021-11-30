@@ -3049,14 +3049,14 @@ function _objectSpread2(target) {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"20742ec8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@vue/cli-plugin-babel/node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueMenu/index.vue?vue&type=template&id=09bb4566&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"20742ec8-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@vue/cli-plugin-babel/node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueMenu/index.vue?vue&type=template&id=7ba2255f&
 var render = function () {
 var _obj;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:( _obj = { 'sm-menu': true }, _obj[this.placement] = !!this.placement, _obj )},[_c('sm-menu',{attrs:{"active":_vm.currentValue,"items":_vm.menu,"activeClass":_vm.activeClass,"hoveredIndex":_vm.hovered},on:{"on-click":_vm.triggerClick}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueMenu/index.vue?vue&type=template&id=09bb4566&
+// CONCATENATED MODULE: ./src/components/VueMenu/index.vue?vue&type=template&id=7ba2255f&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.map.js
 var es_array_map = __webpack_require__("d81d");
@@ -3352,7 +3352,7 @@ var component = normalizeComponent(
     triggerHover: function triggerHover() {
       var itemsIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 
-      if (Array.isArray(itemsIndex) && itemsIndex.length > 0) {
+      if (Array.isArray(itemsIndex)) {
         this.hovered = itemsIndex;
       }
     },

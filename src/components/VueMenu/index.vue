@@ -58,7 +58,7 @@ export default {
   methods: {
     // 手动触发hover
     triggerHover(itemsIndex = []) {
-      if (Array.isArray(itemsIndex) && itemsIndex.length > 0) {
+      if (Array.isArray(itemsIndex)) {
         this.hovered = itemsIndex;
       }
     },
