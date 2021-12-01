@@ -52,7 +52,6 @@ export default {
   },
   methods: {
     setActive(cm, index) {
-      console.log("this.hoveredIndex", this.hoveredIndex);
       let hoveredClass = this.hoveredIndex[this.level];
       let hover = undefined;
       if (this.hoveredIndex.length && index === hoveredClass) {
