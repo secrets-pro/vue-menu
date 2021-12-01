@@ -64,8 +64,8 @@ export default {
     },
     triggerClick(item) {
       // 构造
-      let v = item.map(el => el.name);
-      let l = item.map(el => el.title);
+      let v = item.map((el) => el.name);
+      let l = item.map((el) => el.title);
       this.currentValue = v;
       this.currentLabel = l;
       this.$emit("input", v);

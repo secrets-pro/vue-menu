@@ -10,7 +10,7 @@
       ></vue-menu>
       <div>
         <button @click="click">手动设置</button>
-        <button @click="click1">手动设置1</button>
+        <button @click="click1">手动清空</button>
       </div>
     </div>
   </div>
@@ -88,7 +88,7 @@ export default {
       this.$refs.menu.triggerHover([1, 0]);
     },
     click1() {
-      this.$refs.menu.triggerHover([2, 1]);
+      this.$refs.menu.triggerHover([]);
     },
     choose(...items) {
       console.log(items);
